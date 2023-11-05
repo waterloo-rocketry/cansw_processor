@@ -1,0 +1,5 @@
+/dts-v1/;
+
+#include <st/h7/stm32h7b3.dtsi>
+
+&led0

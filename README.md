@@ -7,8 +7,10 @@ To get started with Zephyr, follow [this guide](https://docs.zephyrproject.org/l
 
 Once you have installed and configured Zephyr and its SDK, you will need to clone this repository *inside* `zephyrproject/` (or whatever you called the equivalent directory during the install process):
 
-
-    joedo@BASEDBOOK MINGW64 ~/zephyrproject$ git clone https://github.com/waterloo-rocketry/cansw_processor.git
+```bash
+joedo@BASEDBOOK MINGW64 ~/zephyrproject$ git clone https://github.com/waterloo-rocketry/cansw_processor.git
+```
+    
 
 Zephyr refers to this as a workspace application.
 ## Project Organization

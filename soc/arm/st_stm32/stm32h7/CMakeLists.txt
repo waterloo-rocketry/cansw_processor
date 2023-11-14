@@ -1,0 +1,1 @@
+include(${ZEPHYR_BASE}/soc/arm/st_stm32/stm32h7/CMakeLists.txt)

@@ -1,0 +1,17 @@
+identifier: processor
+name: processor
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 368
+flash: 1024
+supported:
+  - arduino_gpio
+  - gpio
+  - memc
+  - adc
+  - counter
+vendor: waterloorocketry

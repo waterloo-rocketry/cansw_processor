@@ -1,0 +1,13 @@
+#include <st/h7/stm32h730.dtsi>
+
+/ {
+	soc {
+		compatible = "st,stm32h733", "st,stm32h7", "simple-bus";
+
+		flash-controller@52002000 {
+			flash0: flash@8000000 {
+				reg = <0x08000000 DT_SIZE_K(1024)>;
+			};
+		};
+	};
+};

@@ -44,26 +44,24 @@
 
 
  &clk_hsi {
-	clock-frequency = <DT_FREQ_M(8)>;
+	clock-frequency = <DT_FREQ_M(4)>;
 	status = "okay";
 	hsi-div = <1>;
 };
 
 
-/*
 &pll {
-	div-m = <5>;
-	mul-n = <110>;
+	div-m = <1>;
+	mul-n = <125>;
 	div-p = <1>;
-	div-q = <4>;
-	div-r = <2>;
+	div-q = <0>;
+	div-r = <0>;
 	clocks = <&clk_hsi>;
 	status = "okay";
 };
-*/
 
 &rcc {
-	clocks = <&clk_hsi>;
+	clocks = <&pll>;
 	clock-frequency = <DT_FREQ_M(8)>;
 	d1cpre = <1>;
 	hpre = <2>;

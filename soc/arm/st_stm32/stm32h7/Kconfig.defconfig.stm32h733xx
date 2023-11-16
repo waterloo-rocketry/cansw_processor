@@ -1,0 +1,11 @@
+# ST STM32H723X MCU configuration options
+
+if SOC_STM32H733XX
+
+config SOC
+	default "stm32h733xx"
+
+config NUM_IRQS
+	default 163
+
+endif # SOC_STM32H733XX

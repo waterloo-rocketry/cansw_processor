@@ -1,0 +1,85 @@
+/dts-v1/; 
+#include <st/h7/stm32h733.dtsi>
+#include <st/h7/stm32h733vgtx-pinctrl.dtsi>
+
+/ {
+
+	soc {
+
+		pinctrl {
+		swj-cfg = "jtag-disable";
+			};
+	};
+
+
+    model = "CANHW Processor Board";
+    compatible = "waterloorocketry,processor";
+
+    chosen {
+        zephyr,console = &uart4;
+        zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        red_led: led_1 {
+            gpios = <&gpiob 5 GPIO_ACTIVE_LOW>;
+            label = "Red LED";
+        };
+
+        green_led: led_2 {
+			gpios = <&gpioe 0 GPIO_ACTIVE_LOW>;
+			label = "User LD1";
+		};
+
+    };
+
+    aliases {
+		led0 = &red_led;
+		led1 = &green_led;
+	};
+
+};
+
+
+ &clk_hsi {
+	//clock-frequency = <DT_FREQ_M(64)>;
+	status = "okay";
+	hsi-div = <4>;
+};
+
+
+&pll {
+	div-m = <4>;
+	mul-n = <125>;
+	div-p = <1>;
+	div-q = <1>;
+	div-r = <1>;
+	clocks = <&clk_hsi>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(500)>;
+	d1cpre = <1>;
+	hpre = <2>;
+	d1ppre = <2>;
+	d2ppre1 = <2>;
+	d2ppre2 = <2>;
+	d3ppre = <2>;
+};
+
+
+
+&uart4 {
+    pinctrl-0 = <&uart4_tx_pb9 &uart4_rx_pb8>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
+
+
+
+

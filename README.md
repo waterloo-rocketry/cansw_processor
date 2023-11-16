@@ -27,6 +27,8 @@ Inside of the repository, you can have multiple "projects" consisting of differe
 
 Zephyr is designed to build generic C source code for any supported board. Since our board isn't one of the ones with existing support, we have a bunch of custom configuration files inside of `cansw_processor/boards/`. These files were written following the board porting guide [here](https://docs.zephyrproject.org/latest/hardware/porting/board_porting.html). This folder also contains `openocd.cfg`. We use OpenOCD to flash the code onto the actual board. To do so, you will need to [install OpenOCD for your operating system](https://docs.zephyrproject.org/latest/develop/flash_debug/host-tools.html#openocd-debug-host-tools) and add it to PATH.
 
+You have to make some edits to the config file to get the code to build. From your zephyrproject folder, run `cd .west` and you should see a file called config. `vim config` and you should see 6 lines in it. Change line 2 to read `path = cansw_processor` rather than `path = zephyr` and save. 
+
 When building the code for the first time, you will want to do a pristine build (similar to "Clean and Make" in MPLAB). You also need to be in a very specific directory to do this. 
 
 ```console

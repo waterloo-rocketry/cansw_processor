@@ -11,8 +11,8 @@ LOG_MODULE_REGISTER(a, LOG_LEVEL_DBG);
 
 int main(void)
 {
-	
-	LOG_INF("Hello World! \n");
+	printk("Hello World!\n");
+	// LOG_INF("Hello World! \n");
 	//printf("Hello World!\n");
 	return 0;
 }

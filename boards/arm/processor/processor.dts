@@ -54,7 +54,7 @@
 	div-m = <4>;
 	mul-n = <125>;
 	div-p = <1>;
-	div-q = <1>;
+	div-q = <20>; // 500 / 20 = 25MHz for SDMMC
 	div-r = <1>;
 	clocks = <&clk_hsi>;
 	status = "okay";

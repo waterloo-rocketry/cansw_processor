@@ -1,0 +1,7 @@
+# ninja log v5
+3349	6699	7265047470585892	zephyr/include/generated/version.h	2530bf9b4bb95509
+3349	6699	7265047470585892	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.same_prio/zephyr/include/generated/version.h	2530bf9b4bb95509
+3776	11044	7265047511835124	zephyr/misc/generated/syscalls.json	6670bd3e85d66516
+3776	11044	7265047511835124	zephyr/misc/generated/struct_tags.json	6670bd3e85d66516
+3776	11044	7265047511835124	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.same_prio/zephyr/misc/generated/syscalls.json	6670bd3e85d66516
+3776	11044	7265047511835124	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.same_prio/zephyr/misc/generated/struct_tags.json	6670bd3e85d66516

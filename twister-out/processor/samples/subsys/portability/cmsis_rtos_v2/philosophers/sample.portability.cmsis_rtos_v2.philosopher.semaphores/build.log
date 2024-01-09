@@ -1,0 +1,251 @@
+Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/joedo/zephyrproject/zephyr/samples/subsys/portability/cmsis_rtos_v2/philosophers
+-- CMake version: 3.27.6
+-- Found Python3: C:/Users/joedo/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.11.5", minimum required is "3.8") found components: Interpreter 
+-- Cache files will be written to: C:/Users/joedo/zephyrproject/zephyr/.cache
+-- Zephyr version: 3.5.99 (C:/Users/joedo/zephyrproject/zephyr)
+-- Found west (found suitable version "1.1.0", minimum required is "0.14.0")
+-- Board: processor
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found toolchain: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found Dtc: C:/ProgramData/chocolatey/bin/dtc.exe (found suitable version "1.5.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor.dts
+-- Generated zephyr.dts: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/dts.cmake
+C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/zephyr.dts:900.11-902.5: Warning (simple_bus_reg): /soc/pinctrl: missing or empty reg/ranges property
+Parsing C:/Users/joedo/zephyrproject/zephyr/Kconfig
+Loaded configuration 'C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor_defconfig'
+Merged configuration 'C:/Users/joedo/zephyrproject/zephyr/samples/subsys/portability/cmsis_rtos_v2/philosophers/prj.conf'
+Merged configuration 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/.config'
+Kconfig header saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/autoconf.h'
+-- Found GnuLd: c:/users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+CMake Warning in C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/CMakeFiles/CMakeScratch/TryCompile-9zjp91/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/CMakeFiles/CMakeScratch/TryCompile-9zjp91/CMakeFiles/cmTC_d853b.dir/./
+
+  has 247 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    src.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning at C:/Users/joedo/zephyrproject/zephyr/CMakeLists.txt:1940 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- Configuring done (61.0s)
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/CMakeFiles/zephyr.dir/./
+
+  has 208 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    soc/arm/st_stm32/common/stm32cube_hal.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/arch/arm/core/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/./
+
+  has 236 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    nmi_on_reset.S.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/arch/arm/core/cortex_m/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/./
+
+  has 255 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    fpu.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/arch/arm/core/mpu/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/./
+
+  has 245 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    arm_core_mpu.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/lib/libc/picolibc/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/./
+
+  has 239 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    libc-hooks.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/lib/libc/common/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/./
+
+  has 235 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    source/stdlib/abort.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/lib/posix/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/lib/posix/CMakeFiles/lib__posix.dir/./
+
+  has 222 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    8484c62ce8d76c34752b2cf54f95aae8/empty_file.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/subsys/portability/cmsis_rtos_v2/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/subsys/portability/cmsis_rtos_v2/CMakeFiles/subsys__portability__cmsis_rtos_v2.dir/./
+
+  has 269 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    semaphore.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/drivers/interrupt_controller/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/drivers/interrupt_controller/CMakeFiles/drivers__interrupt_controller.dir/./
+
+  has 260 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    intc_exti_stm32.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/drivers/clock_control/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir/./
+
+  has 246 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    clock_stm32_ll_h7.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/drivers/console/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/drivers/console/CMakeFiles/drivers__console.dir/./
+
+  has 234 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    uart_console.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/drivers/pinctrl/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir/./
+
+  has 234 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    pinctrl_stm32.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/zephyr/drivers/timer/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/./
+
+  has 230 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    cortex_m_systick.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/./
+
+  has 253 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    stm32h7xx/drivers/src/stm32h7xx_ll_utils.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (3.4s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_RUNID
+
+
+-- Build files have been written to: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores

@@ -1,0 +1,19 @@
+# ninja log v5
+747	1958	7265047350428703	zephyr/include/generated/version.h	55fb222422e48e14
+747	1958	7265047350428703	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/version.h	55fb222422e48e14
+787	6784	7265047391799333	zephyr/misc/generated/syscalls.json	2e17a0a0cc5215c6
+787	6784	7265047391799333	zephyr/misc/generated/struct_tags.json	2e17a0a0cc5215c6
+787	6784	7265047391799333	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/misc/generated/syscalls.json	2e17a0a0cc5215c6
+787	6784	7265047391799333	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/misc/generated/struct_tags.json	2e17a0a0cc5215c6
+6786	13829	7265047462635851	zephyr/include/generated/syscall_dispatch.c	8343cfe9f6bf1780
+6786	13829	7265047462635851	zephyr/include/generated/syscall_list.h	8343cfe9f6bf1780
+6786	13829	7265047462635851	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/syscall_dispatch.c	8343cfe9f6bf1780
+6786	13829	7265047462635851	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/syscall_list.h	8343cfe9f6bf1780
+6843	15676	7265047486026541	zephyr/include/generated/kobj-types-enum.h	3b14d96dfa799499
+6843	15676	7265047486026541	zephyr/include/generated/otype-to-str.h	3b14d96dfa799499
+6843	15676	7265047486026541	zephyr/include/generated/otype-to-size.h	3b14d96dfa799499
+6843	15676	7265047486026541	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/kobj-types-enum.h	3b14d96dfa799499
+6843	15676	7265047486026541	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/otype-to-str.h	3b14d96dfa799499
+6843	15676	7265047486026541	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/otype-to-size.h	3b14d96dfa799499
+6816	15710	7265047487672145	zephyr/include/generated/driver-validation.h	32223ccc4f4eb313
+6816	15710	7265047487672145	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/philosophers/sample.portability.cmsis_rtos_v2.philosopher.semaphores/zephyr/include/generated/driver-validation.h	32223ccc4f4eb313

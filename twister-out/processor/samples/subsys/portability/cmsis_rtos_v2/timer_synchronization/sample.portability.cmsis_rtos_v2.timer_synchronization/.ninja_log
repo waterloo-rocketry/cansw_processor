@@ -1,0 +1,25 @@
+# ninja log v5
+672	1919	7265047220096430	zephyr/include/generated/version.h	139cdd2da03face1
+672	1919	7265047220096430	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/version.h	139cdd2da03face1
+715	5496	7265047255336935	zephyr/misc/generated/syscalls.json	ea9bbd22d1378457
+715	5496	7265047255336935	zephyr/misc/generated/struct_tags.json	ea9bbd22d1378457
+715	5496	7265047255336935	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/misc/generated/syscalls.json	ea9bbd22d1378457
+715	5496	7265047255336935	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/misc/generated/struct_tags.json	ea9bbd22d1378457
+5498	7058	7265047267269606	zephyr/include/generated/syscall_dispatch.c	2bf4efaf4b8c779d
+5498	7058	7265047267269606	zephyr/include/generated/syscall_list.h	2bf4efaf4b8c779d
+5498	7058	7265047267269606	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/syscall_dispatch.c	2bf4efaf4b8c779d
+5498	7058	7265047267269606	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/syscall_list.h	2bf4efaf4b8c779d
+5527	10486	7265047299728322	zephyr/include/generated/driver-validation.h	a2d503b78e07b0a6
+5527	10486	7265047299728322	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/driver-validation.h	a2d503b78e07b0a6
+5556	10680	7265047302229694	zephyr/include/generated/kobj-types-enum.h	66f39575b7c2a567
+5556	10680	7265047302229694	zephyr/include/generated/otype-to-str.h	66f39575b7c2a567
+5556	10680	7265047302229694	zephyr/include/generated/otype-to-size.h	66f39575b7c2a567
+5556	10680	7265047302229694	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/kobj-types-enum.h	66f39575b7c2a567
+5556	10680	7265047302229694	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/otype-to-str.h	66f39575b7c2a567
+5556	10680	7265047302229694	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/otype-to-size.h	66f39575b7c2a567
+10681	13800	7265047339095773	zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj	c81683d2b44d003d
+13814	16328	7265047360327939	zephyr/include/generated/offsets.h	2f53a96c8ecba49c
+13814	16328	7265047360327939	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/offsets.h	2f53a96c8ecba49c
+16386	20684	7265047406967028	zephyr/CMakeFiles/zephyr.dir/lib/os/hex.c.obj	48a226d8feeacd61
+16367	20984	7265047409108351	zephyr/CMakeFiles/zephyr.dir/lib/os/dec.c.obj	cb480514cdc94fa7
+16481	21688	7265047416452141	zephyr/CMakeFiles/zephyr.dir/lib/os/timeutil.c.obj	e5586959d0507dcf

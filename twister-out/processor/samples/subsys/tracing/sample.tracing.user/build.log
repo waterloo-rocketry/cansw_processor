@@ -1,0 +1,68 @@
+Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing
+-- CMake version: 3.27.6
+-- Found Python3: C:/Users/joedo/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.11.5", minimum required is "3.8") found components: Interpreter 
+-- Cache files will be written to: C:/Users/joedo/zephyrproject/zephyr/.cache
+-- Zephyr version: 3.5.99 (C:/Users/joedo/zephyrproject/zephyr)
+-- Found west (found suitable version "1.1.0", minimum required is "0.14.0")
+-- Board: processor
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found toolchain: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found Dtc: C:/ProgramData/chocolatey/bin/dtc.exe (found suitable version "1.5.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor.dts
+-- Generated zephyr.dts: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/dts.cmake
+C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/zephyr.dts:900.11-902.5: Warning (simple_bus_reg): /soc/pinctrl: missing or empty reg/ranges property
+Parsing C:/Users/joedo/zephyrproject/zephyr/Kconfig
+Loaded configuration 'C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor_defconfig'
+Merged configuration 'C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing/prj_user.conf'
+Merged configuration 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/.config'
+Kconfig header saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/include/generated/autoconf.h'
+-- Found GnuLd: c:/users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+-- Configuring done (28.8s)
+-- Generating done (0.8s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_RUNID
+
+
+-- Build files have been written to: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user
+[1/130] Generating include/generated/version.h
+-- Zephyr version: 3.5.99 (C:/Users/joedo/zephyrproject/zephyr), build: zephyr-v3.5.0-1427-gc1a6cfdf9bd8
+[2/130] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/130] Generating include/generated/syscall_dispatch.c, include/generated/syscall_list.h
+[4/130] Generating include/generated/driver-validation.h
+[5/130] Generating include/generated/kobj-types-enum.h, include/generated/otype-to-str.h, include/generated/otype-to-size.h
+[6/130] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[7/130] Generating include/generated/offsets.h
+[8/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/hex.c.obj
+[9/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/dec.c.obj
+[10/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/timeutil.c.obj
+[11/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/rb.c.obj
+[12/130] Building C object CMakeFiles/app.dir/src/main.c.obj
+FAILED: CMakeFiles/app.dir/src/main.c.obj 
+C:\Users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe -DCORE_CM7 -DHSE_VALUE=8000000 -DKERNEL -DPICOLIBC_INTEGER_PRINTF_SCANF -DSTM32H723xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -D_FORTIFY_SOURCE=1 -D_POSIX_C_SOURCE=200809 -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -IC:/Users/joedo/zephyrproject/zephyr/include -IC:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/include/generated -IC:/Users/joedo/zephyrproject/zephyr/soc/arm/st_stm32/stm32h7 -IC:/Users/joedo/zephyrproject/zephyr/drivers -IC:/Users/joedo/zephyrproject/zephyr/soc/arm/st_stm32/common -IC:/Users/joedo/zephyrproject/zephyr/kernel/include -IC:/Users/joedo/zephyrproject/zephyr/arch/arm/include -IC:/Users/joedo/zephyrproject/zephyr/subsys/tracing/include -IC:/Users/joedo/zephyrproject/zephyr/subsys/tracing/user/. -IC:/Users/joedo/zephyrproject/modules/hal/cmsis/CMSIS/Core/Include -IC:/Users/joedo/zephyrproject/zephyr/modules/cmsis/. -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/soc -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/include -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/include/Legacy -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/common_ll/include -fno-strict-aliasing -Werror -Os -imacros C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/tracing/sample.tracing.user/zephyr/include/generated/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m7 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=C:/Users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/arm-zephyr-eabi -imacros C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/joedo/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/joedo/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections --specs=picolibc.specs -std=c99 -MD -MT CMakeFiles/app.dir/src/main.c.obj -MF CMakeFiles\app.dir\src\main.c.obj.d -o CMakeFiles/app.dir/src/main.c.obj -c C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing/src/main.c
+C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing/src/main.c: In function 'helloLoop':
+C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing/src/main.c:49:42: error: 'CONFIG_BOARD' undeclared (first use in this function); did you mean 'CONFIG_ARM'?
+   49 |                                 my_name, CONFIG_BOARD);
+      |                                          ^~~~~~~~~~~~
+      |                                          CONFIG_ARM
+C:/Users/joedo/zephyrproject/zephyr/samples/subsys/tracing/src/main.c:49:42: note: each undeclared identifier is reported only once for each function it appears in
+[13/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[14/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/sem.c.obj
+[15/130] Building C object CMakeFiles/app.dir/src/tracing_user.c.obj
+[16/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/thread_entry.c.obj
+[17/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[18/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/multi_heap.c.obj
+[19/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/bitarray.c.obj
+[20/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap-validate.c.obj
+[21/130] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap.c.obj
+ninja: build stopped: subcommand failed.

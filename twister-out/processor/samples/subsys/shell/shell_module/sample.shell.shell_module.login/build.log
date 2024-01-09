@@ -1,0 +1,32 @@
+Loading Zephyr module(s) (Zephyr base): extensions
+-- Found Python3: C:/Users/joedo/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.11.5", minimum required is "3.8") found components: Interpreter 
+-- Cache files will be written to: C:/Users/joedo/zephyrproject/zephyr/.cache
+Loading Zephyr module(s) (Zephyr base (cached)): zephyr_default:dts,kconfig
+-- Application: C:/Users/joedo/zephyrproject/zephyr/samples/subsys/shell/shell_module
+-- CMake version: 3.27.6
+-- Zephyr version: 3.5.99 (C:/Users/joedo/zephyrproject/zephyr)
+-- Found west (found suitable version "1.1.0", minimum required is "0.14.0")
+-- Board: processor
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found toolchain: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found Dtc: C:/ProgramData/chocolatey/bin/dtc.exe (found suitable version "1.5.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor.dts
+-- Generated zephyr.dts: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/dts.cmake
+C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/zephyr.dts:900.11-902.5: Warning (simple_bus_reg): /soc/pinctrl: missing or empty reg/ranges property
+
+warning: SHELL_PROMPT_UART (defined at subsys/shell/backends/Kconfig.backends:38) was assigned the
+value 'login: ' but got the value ''. Check these unsatisfied dependencies: SHELL_BACKEND_SERIAL
+(=n). See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_SHELL_PROMPT_UART and/or look up
+SHELL_PROMPT_UART in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing C:/Users/joedo/zephyrproject/zephyr/samples/subsys/shell/shell_module/Kconfig
+Loaded configuration 'C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor_defconfig'
+Merged configuration 'C:/Users/joedo/zephyrproject/zephyr/samples/subsys/shell/shell_module/prj_login.conf'
+Merged configuration 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/.config'
+Kconfig header saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/shell/shell_module/sample.shell.shell_module.login/zephyr/include/generated/autoconf.h'

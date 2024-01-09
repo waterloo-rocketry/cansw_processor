@@ -1,0 +1,24 @@
+# ninja log v5
+806	2162	7265047114857745	zephyr/include/generated/version.h	f328cb76748bdb73
+806	2162	7265047114857745	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/version.h	f328cb76748bdb73
+843	6547	7265047156199155	zephyr/misc/generated/syscalls.json	f912e00fd57930c8
+843	6547	7265047156199155	zephyr/misc/generated/struct_tags.json	f912e00fd57930c8
+843	6547	7265047156199155	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/misc/generated/syscalls.json	f912e00fd57930c8
+843	6547	7265047156199155	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/misc/generated/struct_tags.json	f912e00fd57930c8
+6548	10191	7265047192010986	zephyr/include/generated/syscall_dispatch.c	f54c8bbecb1b7307
+6548	10191	7265047192010986	zephyr/include/generated/syscall_list.h	f54c8bbecb1b7307
+6548	10191	7265047192010986	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/syscall_dispatch.c	f54c8bbecb1b7307
+6548	10191	7265047192010986	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/syscall_list.h	f54c8bbecb1b7307
+6577	11244	7265047205297443	zephyr/include/generated/driver-validation.h	900b1bc1d06888b5
+6577	11244	7265047205297443	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/driver-validation.h	900b1bc1d06888b5
+6606	11287	7265047205972479	zephyr/include/generated/kobj-types-enum.h	2ed70e19daf2986b
+6606	11287	7265047205972479	zephyr/include/generated/otype-to-str.h	2ed70e19daf2986b
+6606	11287	7265047205972479	zephyr/include/generated/otype-to-size.h	2ed70e19daf2986b
+6606	11287	7265047205972479	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/kobj-types-enum.h	2ed70e19daf2986b
+6606	11287	7265047205972479	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/otype-to-str.h	2ed70e19daf2986b
+6606	11287	7265047205972479	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/otype-to-size.h	2ed70e19daf2986b
+11288	32008	7265047410431939	zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj	53b2b1b750c86656
+32027	39615	7265047489655213	zephyr/include/generated/offsets.h	2b9004620296a24d
+32027	39615	7265047489655213	C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/rtio/sensor_batch_processing/sample.rtio.sensor_batch_processing/zephyr/include/generated/offsets.h	2b9004620296a24d
+39681	41735	7265047510715353	zephyr/CMakeFiles/zephyr.dir/lib/os/dec.c.obj	b880b546ca5a4371
+39700	41902	7265047511355116	zephyr/CMakeFiles/zephyr.dir/lib/os/hex.c.obj	c06220c6e30b8858

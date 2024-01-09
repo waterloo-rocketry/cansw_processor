@@ -1,0 +1,30 @@
+zephyr/CMakeFiles/zephyr.dir/lib/os/multi_heap.c.obj: \
+ C:/Users/joedo/zephyrproject/zephyr/lib/os/multi_heap.c \
+ C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/portability/cmsis_rtos_v2/timer_synchronization/sample.portability.cmsis_rtos_v2.timer_synchronization/zephyr/include/generated/autoconf.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/__assert.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\lib\gcc\arm-zephyr-eabi\12.2.0\include\stdbool.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain/gcc.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain/common.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_macro.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_internal.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_loops.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_listify.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_internal_is_eq.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_inc.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_dec.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_x2.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/types.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\lib\gcc\arm-zephyr-eabi\12.2.0\include\stddef.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\picolibc\include\stdint.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\picolibc\include\machine\_default_types.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\picolibc\include\sys\features.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\picolibc\include\picolibc.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\picolibc\include\sys\_intsup.h \
+ c:\users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\picolibc\include\sys\_stdint.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/time_units.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/sys_heap.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/mem_stats.h \
+ C:/Users/joedo/zephyrproject/zephyr/include/zephyr/sys/multi_heap.h

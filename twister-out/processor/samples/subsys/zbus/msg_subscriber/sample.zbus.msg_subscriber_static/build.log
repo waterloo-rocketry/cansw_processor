@@ -1,0 +1,175 @@
+Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/joedo/zephyrproject/zephyr/samples/subsys/zbus/msg_subscriber
+-- CMake version: 3.27.6
+-- Found Python3: C:/Users/joedo/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.11.5", minimum required is "3.8") found components: Interpreter 
+-- Cache files will be written to: C:/Users/joedo/zephyrproject/zephyr/.cache
+-- Zephyr version: 3.5.99 (C:/Users/joedo/zephyrproject/zephyr)
+-- Found west (found suitable version "1.1.0", minimum required is "0.14.0")
+-- Board: processor
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found toolchain: zephyr 0.16.3 (C:/Users/joedo/zephyr-sdk-0.16.3)
+-- Found Dtc: C:/ProgramData/chocolatey/bin/dtc.exe (found suitable version "1.5.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor.dts
+-- Generated zephyr.dts: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/dts.cmake
+C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/zephyr.dts:900.11-902.5: Warning (simple_bus_reg): /soc/pinctrl: missing or empty reg/ranges property
+Parsing C:/Users/joedo/zephyrproject/zephyr/samples/subsys/zbus/msg_subscriber/Kconfig
+Loaded configuration 'C:/Users/joedo/zephyrproject/cansw_processor/boards/arm/processor/processor_defconfig'
+Merged configuration 'C:/Users/joedo/zephyrproject/zephyr/samples/subsys/zbus/msg_subscriber/prj.conf'
+Merged configuration 'C:\Users\joedo\zephyrproject\cansw_processor\twister-out\processor\samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static\twister\testsuite_extra.conf'
+Merged configuration 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/.config'
+Kconfig header saved to 'C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/include/generated/autoconf.h'
+-- Found GnuLd: c:/users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+CMake Warning at C:/Users/joedo/zephyrproject/zephyr/CMakeLists.txt:1940 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- Configuring done (14.9s)
+CMake Warning in C:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/./
+
+  has 212 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    stm32h7xx/drivers/src/stm32h7xx_hal.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (2.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_RUNID
+
+
+-- Build files have been written to: C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static
+[1/137] Generating include/generated/version.h
+-- Zephyr version: 3.5.99 (C:/Users/joedo/zephyrproject/zephyr), build: zephyr-v3.5.0-1427-gc1a6cfdf9bd8
+[2/137] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/137] Generating include/generated/syscall_dispatch.c, include/generated/syscall_list.h
+[4/137] Generating include/generated/kobj-types-enum.h, include/generated/otype-to-str.h, include/generated/otype-to-size.h
+[5/137] Generating include/generated/driver-validation.h
+[6/137] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[7/137] Generating include/generated/offsets.h
+[8/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/dec.c.obj
+[9/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/timeutil.c.obj
+[10/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[11/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/hex.c.obj
+[12/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[13/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/sem.c.obj
+[14/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/bitarray.c.obj
+[15/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/thread_entry.c.obj
+[16/137] Building C object CMakeFiles/app.dir/src/main.c.obj
+[17/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/multi_heap.c.obj
+[18/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/rb.c.obj
+[19/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap-validate.c.obj
+[20/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap.c.obj
+[21/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[22/137] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[23/137] Building C object zephyr/CMakeFiles/zephyr.dir/soc/arm/st_stm32/stm32h7/mpu_regions.c.obj
+[24/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[25/137] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap_listener.c.obj
+[26/137] Linking C static library app\libapp.a
+[27/137] Building C object zephyr/CMakeFiles/zephyr.dir/soc/arm/st_stm32/stm32h7/soc_m7.c.obj
+[28/137] Building C object zephyr/CMakeFiles/zephyr.dir/soc/arm/st_stm32/common/stm32cube_hal.c.obj
+[29/137] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/net/lib/utils/addr_utils.c.obj
+[30/137] Building C object zephyr/CMakeFiles/zephyr.dir/soc/arm/st_stm32/common/soc_config.c.obj
+[31/137] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[32/137] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/mem_mgmt/mem_attr.c.obj
+[33/137] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[34/137] Building ASM object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi_on_reset.S.obj
+[35/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/exc_exit.S.obj
+[36/137] Building C object zephyr/arch/common/CMakeFiles/isr_tables.dir/isr_tables.c.obj
+[37/137] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/sw_isr_common.c.obj
+[38/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault_s.S.obj
+[39/137] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/fatal.c.obj
+[40/137] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/tls.c.obj
+[41/137] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi.c.obj
+[42/137] Generating linker_zephyr_pre0.cmd
+[43/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/vector_table.S.obj
+[44/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/reset.S.obj
+[45/137] Linking C static library zephyr\arch\common\libisr_tables.a
+[46/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault.c.obj
+[47/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fpu.c.obj
+[48/137] Building C object zephyr/CMakeFiles/zephyr_pre0.dir/misc/empty_file.c.obj
+[49/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/scb.c.obj
+[50/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread_abort.c.obj
+[51/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap_helper.S.obj
+[52/137] Linking C static library zephyr\arch\arch\arm\core\libarch__arm__core.a
+[53/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/cpu_idle.S.obj
+[54/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap.c.obj
+[55/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/prep_c.c.obj
+[56/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_manage.c.obj
+[57/137] Linking C static library zephyr\arch\common\libarch__common.a
+[58/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_init.c.obj
+[59/137] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread.c.obj
+[60/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/__aeabi_read_tp.S.obj
+[61/137] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/isr_wrapper.S.obj
+[62/137] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_core_mpu.c.obj
+[63/137] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/libc-hooks.c.obj
+[64/137] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/abort.c.obj
+[65/137] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_mpu.c.obj
+[66/137] Linking C static library zephyr\arch\arch\arm\core\cortex_m\libarch__arm__core__cortex_m.a
+[67/137] Building C object zephyr/subsys/zbus/CMakeFiles/subsys__zbus.dir/zbus.c.obj
+[68/137] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/buf.c.obj
+[69/137] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/buf_simple.c.obj
+[70/137] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/malloc.c.obj
+[71/137] Building C object zephyr/subsys/zbus/CMakeFiles/subsys__zbus.dir/zbus_iterable_sections.c.obj
+[72/137] Linking C static library zephyr\lib\libc\picolibc\liblib__libc__picolibc.a
+[73/137] Linking C static library zephyr\arch\arch\arm\core\mpu\libarch__arm__core__mpu.a
+[74/137] Building C object zephyr/drivers/interrupt_controller/CMakeFiles/drivers__interrupt_controller.dir/intc_exti_stm32.c.obj
+[75/137] Building C object zephyr/drivers/console/CMakeFiles/drivers__console.dir/uart_console.c.obj
+[76/137] Linking C static library zephyr\lib\libc\common\liblib__libc__common.a
+[77/137] Building C object zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir/common.c.obj
+[78/137] Linking C static library zephyr\subsys\zbus\libsubsys__zbus.a
+[79/137] Building C object zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir/clock_stm32_ll_h7.c.obj
+[80/137] Linking C static library zephyr\subsys\net\libsubsys__net.a
+[81/137] Linking C static library zephyr\drivers\interrupt_controller\libdrivers__interrupt_controller.a
+[82/137] Building C object zephyr/drivers/gpio/CMakeFiles/drivers__gpio.dir/gpio_stm32.c.obj
+[83/137] Linking C static library zephyr\drivers\console\libdrivers__console.a
+[84/137] Building C object zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir/pinctrl_stm32.c.obj
+[85/137] Building C object zephyr/drivers/reset/CMakeFiles/drivers__reset.dir/reset_stm32.c.obj
+[86/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/soc/system_stm32h7xx.c.obj
+[87/137] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/sys_clock_init.c.obj
+[88/137] Building C object zephyr/drivers/serial/CMakeFiles/drivers__serial.dir/uart_stm32.c.obj
+[89/137] Linking C static library zephyr\drivers\clock_control\libdrivers__clock_control.a
+[90/137] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/cortex_m_systick.c.obj
+[91/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal.c.obj
+[92/137] Linking C static library zephyr\drivers\gpio\libdrivers__gpio.a
+[93/137] Linking C static library zephyr\drivers\pinctrl\libdrivers__pinctrl.a
+[94/137] Linking C static library zephyr\drivers\reset\libdrivers__reset.a
+[95/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_rcc.c.obj
+[96/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_rcc_ex.c.obj
+FAILED: modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_rcc_ex.c.obj 
+C:\Users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe -DCORE_CM7 -DHSE_VALUE=8000000 -DKERNEL -DPICOLIBC_INTEGER_PRINTF_SCANF -DSTM32H723xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -D_FORTIFY_SOURCE=1 -D_POSIX_C_SOURCE=200809 -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -IC:/Users/joedo/zephyrproject/zephyr/include -IC:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/include/generated -IC:/Users/joedo/zephyrproject/zephyr/soc/arm/st_stm32/stm32h7 -IC:/Users/joedo/zephyrproject/zephyr/drivers -IC:/Users/joedo/zephyrproject/zephyr/soc/arm/st_stm32/common -IC:/Users/joedo/zephyrproject/modules/hal/cmsis/CMSIS/Core/Include -IC:/Users/joedo/zephyrproject/zephyr/modules/cmsis/. -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/soc -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/include -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/include/Legacy -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/common_ll/include -fno-strict-aliasing -Werror -Os -imacros C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/include/generated/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m7 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=C:/Users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/arm-zephyr-eabi -imacros C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/joedo/zephyrproject/zephyr/samples/subsys/zbus/msg_subscriber=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/joedo/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/joedo/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections --specs=picolibc.specs -std=c99 -MD -MT modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_rcc_ex.c.obj -MF modules\stm32\stm32cube\CMakeFiles\..__modules__hal__stm32__stm32cube.dir\stm32h7xx\drivers\src\stm32h7xx_hal_rcc_ex.c.obj.d -o modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_rcc_ex.c.obj -c C:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/src/stm32h7xx_hal_rcc_ex.c
+C:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/src/stm32h7xx_hal_rcc_ex.c:3919:1: fatal error: opening dependency file modules\stm32\stm32cube\CMakeFiles\..__modules__hal__stm32__stm32cube.dir\stm32h7xx\drivers\src\stm32h7xx_hal_rcc_ex.c.obj.d: No such file or directory
+ 3919 | }
+      | ^
+compilation terminated.
+[97/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_cortex.c.obj
+FAILED: modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_cortex.c.obj 
+C:\Users\joedo\zephyr-sdk-0.16.3\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe -DCORE_CM7 -DHSE_VALUE=8000000 -DKERNEL -DPICOLIBC_INTEGER_PRINTF_SCANF -DSTM32H723xx -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -D_FORTIFY_SOURCE=1 -D_POSIX_C_SOURCE=200809 -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -IC:/Users/joedo/zephyrproject/zephyr/include -IC:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/include/generated -IC:/Users/joedo/zephyrproject/zephyr/soc/arm/st_stm32/stm32h7 -IC:/Users/joedo/zephyrproject/zephyr/drivers -IC:/Users/joedo/zephyrproject/zephyr/soc/arm/st_stm32/common -IC:/Users/joedo/zephyrproject/modules/hal/cmsis/CMSIS/Core/Include -IC:/Users/joedo/zephyrproject/zephyr/modules/cmsis/. -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/soc -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/include -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/include/Legacy -IC:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/common_ll/include -fno-strict-aliasing -Werror -Os -imacros C:/Users/joedo/zephyrproject/cansw_processor/twister-out/processor/samples/subsys/zbus/msg_subscriber/sample.zbus.msg_subscriber_static/zephyr/include/generated/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m7 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=C:/Users/joedo/zephyr-sdk-0.16.3/arm-zephyr-eabi/arm-zephyr-eabi -imacros C:/Users/joedo/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/joedo/zephyrproject/zephyr/samples/subsys/zbus/msg_subscriber=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/joedo/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/joedo/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections --specs=picolibc.specs -std=c99 -MD -MT modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_cortex.c.obj -MF modules\stm32\stm32cube\CMakeFiles\..__modules__hal__stm32__stm32cube.dir\stm32h7xx\drivers\src\stm32h7xx_hal_cortex.c.obj.d -o modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_hal_cortex.c.obj -c C:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/src/stm32h7xx_hal_cortex.c
+C:/Users/joedo/zephyrproject/modules/hal/stm32/stm32cube/stm32h7xx/drivers/src/stm32h7xx_hal_cortex.c:512:1: fatal error: opening dependency file modules\stm32\stm32cube\CMakeFiles\..__modules__hal__stm32__stm32cube.dir\stm32h7xx\drivers\src\stm32h7xx_hal_cortex.c.obj.d: No such file or directory
+  512 | }
+      | ^
+compilation terminated.
+[98/137] Linking C static library zephyr\drivers\timer\libdrivers__timer.a
+[99/137] Linking C static library zephyr\drivers\serial\libdrivers__serial.a
+[100/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_ll_utils.c.obj
+[101/137] Building C object zephyr/kernel/CMakeFiles/kernel.dir/main_weak.c.obj
+[102/137] Building C object zephyr/kernel/CMakeFiles/kernel.dir/busy_wait.c.obj
+[103/137] Building C object modules/stm32/stm32cube/CMakeFiles/..__modules__hal__stm32__stm32cube.dir/stm32h7xx/drivers/src/stm32h7xx_ll_rcc.c.obj
+[104/137] Building C object zephyr/kernel/CMakeFiles/kernel.dir/banner.c.obj
+[105/137] Linking C static library zephyr\libzephyr.a
+ninja: build stopped: subcommand failed.

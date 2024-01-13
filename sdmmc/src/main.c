@@ -13,8 +13,8 @@
 #include <zephyr/storage/disk_access.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/fs/fs.h>
+#include <zephyr/fs/fs_sys.h>
 
-#if defined(CONFIG_FAT_FILESYSTEM_ELM)
 
 #include <ff.h>
 
@@ -32,122 +32,173 @@ static struct fs_mount_t mp = {
 	.fs_data = &fat_fs,
 };
 
-#elif defined(CONFIG_FILE_SYSTEM_EXT2)
-
-#include <zephyr/fs/ext2.h>
-
-#define DISK_DRIVE_NAME "SDMMC"
-#define DISK_MOUNT_PT "/ext"
-
-static struct fs_mount_t mp = {
-	.type = FS_EXT2,
-	.flags = FS_MOUNT_FLAG_NO_FORMAT,
-	.storage_dev = (void *)DISK_DRIVE_NAME,
-	.mnt_point = "/ext",
-};
-
-#endif
-
 LOG_MODULE_REGISTER(main);
-
 #define MAX_PATH 128
-#define SOME_FILE_NAME "some.dat"
-#define SOME_DIR_NAME "some"
-#define SOME_REQUIRED_LEN MAX(sizeof(SOME_FILE_NAME), sizeof(SOME_DIR_NAME))
 
-static int lsdir(const char *path);
-static bool create_some_entries(const char *base_path)
-{
+int makeDirectory(const char *pathToDirectory) {
+	// assume relative to DISK_MOUNT_PT
+	// e.g. /SD:/somedirname1/somedirname2 -> /somedirname1/somedirname2
+
 	char path[MAX_PATH];
-	struct fs_file_t file;
-	int base = strlen(base_path);
-
-	fs_file_t_init(&file);
-
-	if (base >= (sizeof(path) - SOME_REQUIRED_LEN)) {
-		LOG_ERR("Not enough concatenation buffer to create file paths");
-		return false;
-	}
-
-	LOG_INF("Creating some dir entries in %s", base_path);
-	strncpy(path, base_path, sizeof(path));
-
-	path[base++] = '/';
-	path[base] = 0;
-	strcat(&path[base], SOME_FILE_NAME);
-
-	if (fs_open(&file, path, FS_O_CREATE) != 0) {
-		LOG_ERR("Failed to create file %s", path);
-		return false;
-	}
-	fs_close(&file);
+	int base = strlen(DISK_MOUNT_PT);
+	strncpy(path, DISK_MOUNT_PT, sizeof(path));
 
 	path[base] = 0;
-	strcat(&path[base], SOME_DIR_NAME);
-
-	if (fs_mkdir(path) != 0) {
-		LOG_ERR("Failed to create dir %s", path);
-		/* If code gets here, it has at least successes to create the
-		 * file so allow function to return true.
-		 */
+	strcat(&path[base], pathToDirectory);
+	
+	int mkdirResult = fs_mkdir(path);
+	if (mkdirResult) {
+		printk("Failed to create directory: ");
+		switch (mkdirResult) {
+			case -17:
+				printk("directory already exists");
+				break;
+		}
+		printk("\n");
 	}
-	return true;
+
+
+	return mkdirResult;
 }
+
+int createFile(const char *pathToFile, struct fs_file_system_t *file) {
+	// assume relative to DISK_MOUNT_PT
+	// e.g. /SD:/somedirname1/somedirname2/a.txt -> /somedirname1/somedirname2/a.txt
+
+	char path[MAX_PATH];
+	int base = strlen(DISK_MOUNT_PT);
+	strncpy(path, DISK_MOUNT_PT, sizeof(path));
+
+	path[base] = 0;
+	strcat(&path[base], pathToFile);
+
+	int res = fs_open(file, path, FS_O_CREATE);
+	fs_close(file);
+
+	return res;
+}
+
+int openFile(const char *pathToFile, struct fs_file_system_t *file) {
+	// assume relative to DISK_MOUNT_PT
+	// e.g. /SD:/somedirname1/somedirname2/a.txt -> /somedirname1/somedirname2/a.txt
+
+	char path[MAX_PATH];
+	int base = strlen(DISK_MOUNT_PT);
+	strncpy(path, DISK_MOUNT_PT, sizeof(path));
+
+	path[base] = 0;
+	strcat(&path[base], pathToFile);
+
+	int res = fs_open(file, path, FS_O_RDWR);
+
+	return res;
+}
+
+
 
 static const char *disk_mount_pt = DISK_MOUNT_PT;
 
-int main(void)
-{
-	/* raw disk i/o */
-	do {
-		static const char *disk_pdrv = DISK_DRIVE_NAME;
-		uint64_t memory_size_mb;
-		uint32_t block_count;
-		uint32_t block_size;
-
-		if (disk_access_init(disk_pdrv) != 0) {
-			printk("Catch for debugger");
-			LOG_ERR("Storage init ERROR!");
-			break;
-		}
-
-		if (disk_access_ioctl(disk_pdrv,
-				DISK_IOCTL_GET_SECTOR_COUNT, &block_count)) {
-			printk("Catch for debugger");
-			LOG_ERR("Unable to get sector count");
-			break;
-		}
-		LOG_INF("Block count %u", block_count);
-
-		if (disk_access_ioctl(disk_pdrv,
-				DISK_IOCTL_GET_SECTOR_SIZE, &block_size)) {
-			LOG_ERR("Unable to get sector size");
-			break;
-		}
-		printk("Sector size %u\n", block_size);
-
-		memory_size_mb = (uint64_t)block_count * block_size;
-		printk("Memory Size(MB) %u\n", (uint32_t)(memory_size_mb >> 20));
-	} while (0);
+int main(void) {
+	// initalize so that mount works
+	if (disk_access_init(DISK_DRIVE_NAME) != 0) {
+		printk("Failed to initalize disk access");
+		return 1;
+	}
 
 	mp.mnt_point = disk_mount_pt;
 
 	int res = fs_mount(&mp);
 
-#if defined(CONFIG_FAT_FILESYSTEM_ELM)
+
 	if (res == FR_OK) {
-#else
-	if (res == 0) {
-#endif
 		printk("Disk mounted.\n");
-		int return_value = lsdir(disk_mount_pt);
-		if (return_value >= 0) {
-			if (create_some_entries(disk_mount_pt)) {
-				lsdir(disk_mount_pt);
-			}
-		} else {
-			printk("Error listing dir\n");
-		}
+		printk("Trying to make a directory\n");
+
+
+		int mkdirRes = makeDirectory("/testing");
+		// printk("Trying to write a file to that directory");
+		int mkdirRes2 = makeDirectory("/againthing");
+
+		struct fs_file_system_t file;
+		int mkFileRes = createFile("/testing/a.txt", &file);
+
+		printk("trying to write to that file");
+
+		openFile("/testing/a.txt", &file);
+
+		char* buffer = "testing things";
+		int size = strlen(buffer) * sizeof(char);
+
+		int res = fs_write(&file, buffer, size);
+		printk("We successfully wrote? %d bytes: %d\n", size, res);
+		fs_close(&file);
+
+
+		// res = makeDirectory("/somethingnew");
+		// printk("res %d\n", res);
+		// res = createFile("/somethingnew/somefile.txt", &file);
+		// printk("res %d\n", res);
+		// res = openFile("/somethingnew/somefile.txt", &file);
+		// printk("res %d\n", res);
+		// char* newbuffer = "something else this is a file testing I dunno even man this is weird";
+		// size = strlen(newbuffer) * sizeof(char);
+		// fs_write(&file, newbuffer, size);
+		// fs_close(&file);
+
+
+		// char path[MAX_PATH];
+		// strncpy(path, disk_mount_pt, sizeof(path));
+		// int base = strlen(disk_mount_pt);
+		// path[base++] = '/';
+
+		// path[base] = 0;
+		// strcat(&path[base], "what");
+
+		// int mkDirRes = fs_mkdir(path);
+
+
+		// // trying to read root directory. Unable to read until we get print statements working
+		// int mkDirRes = makeDirectory("/testing");
+		// if (mkDirRes == -17 || mkDirRes == 0) {
+		// 	struct fs_dir_t directoryObj;
+		// 	fs_dir_t_init(&directoryObj);
+
+		// 	// make path to directory`
+		// 	char path[MAX_PATH];
+		// 	int base = strlen(DISK_MOUNT_PT);
+		// 	strncpy(path, DISK_MOUNT_PT, sizeof(path));
+
+		// 	path[base] = 0;
+		// 	strcat(&path[base], "");
+
+		// 	// open the directory
+		// 	int opendirRes = fs_opendir(&directoryObj, path);
+
+		// 	if (opendirRes) {
+		// 		printk("Failed to open the directory\n");
+		// 		return opendirRes;
+		// 	}
+
+		// 	struct fs_dirent entry;
+		// 	for (;;) {
+		// 		/* Verify fs_readdir() */
+		// 		res = fs_readdir(&directoryObj, &entry);
+
+		// 		/* entry.name[0] == 0 means end-of-dir */
+		// 		if (res || entry.name[0] == 0) {
+		// 			break;
+		// 		}
+
+		// 		if (entry.type == FS_DIR_ENTRY_DIR) {
+		// 			printk("[DIR ] %s\n", entry.name);
+		// 		} else {
+		// 			printk("[FILE] %s (size = %zu)\n",
+		// 				entry.name, entry.size);
+		// 		}
+		// 	}
+
+		// }
+
 	} else {
 		printk("Error mounting disk.\n");
 	}
@@ -158,55 +209,4 @@ int main(void)
 		k_sleep(K_MSEC(1000));
 	}
 	return 0;
-}
-
-/* List dir entry by path
- *
- * @param path Absolute path to list
- *
- * @return Negative errno code on error, number of listed entries on
- *         success.
- */
-static int lsdir(const char *path)
-{
-	int res;
-	struct fs_dir_t dirp;
-	static struct fs_dirent entry;
-	int count = 0;
-
-	fs_dir_t_init(&dirp);
-
-	/* Verify fs_opendir() */
-	res = fs_opendir(&dirp, path);
-	if (res) {
-		printk("Error opening dir %s [%d]\n", path, res);
-		return res;
-	}
-
-	printk("\nListing dir %s ...\n", path);
-	for (;;) {
-		/* Verify fs_readdir() */
-		res = fs_readdir(&dirp, &entry);
-
-		/* entry.name[0] == 0 means end-of-dir */
-		if (res || entry.name[0] == 0) {
-			break;
-		}
-
-		if (entry.type == FS_DIR_ENTRY_DIR) {
-			printk("[DIR ] %s\n", entry.name);
-		} else {
-			printk("[FILE] %s (size = %zu)\n",
-				entry.name, entry.size);
-		}
-		count++;
-	}
-
-	/* Verify fs_closedir() */
-	fs_closedir(&dirp);
-	if (res == 0) {
-		res = count;
-	}
-
-	return res;
 }

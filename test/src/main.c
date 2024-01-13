@@ -9,9 +9,6 @@
 
 int main(void)
 {
-	int ret;
-
-
 
 	while (1) {
 

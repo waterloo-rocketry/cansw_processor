@@ -14,6 +14,7 @@
 #include <zephyr/logging/log.h>
 #include <zephyr/fs/fs.h>
 #include <zephyr/fs/fs_sys.h>
+#include <stdlib.h>
 
 
 #include <ff.h>
@@ -133,6 +134,16 @@ int main(void) {
 		printk("We successfully wrote? %d bytes: %d\n", size, res);
 		fs_close(&file);
 
+		printk("Let's check what we wrote");
+		struct fs_file_system_t readingFile;
+		openFile("/testing/a.txt", &readingFile);
+
+		char *readingBuffer = malloc(sizeof(char) * 13);
+		fs_read(&readingFile, readingBuffer, 13);
+		readingBuffer[12] = 0;
+		printk("Tesitng: %s\n", buffer);
+
+
 
 		// res = makeDirectory("/somethingnew");
 		// printk("res %d\n", res);
@@ -200,7 +211,7 @@ int main(void) {
 		// }
 
 	} else {
-		printk("Error mounting disk.\n");
+		printk("Put the disk in dumbass.\n");
 	}
 
 	fs_unmount(&mp);

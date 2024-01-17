@@ -25,196 +25,252 @@
  */
 #define DISK_DRIVE_NAME "SD"
 #define DISK_MOUNT_PT "/"DISK_DRIVE_NAME":"
-
-static FATFS fat_fs;
-/* mounting info */
-static struct fs_mount_t mp = {
-	.type = FS_FATFS,
-	.fs_data = &fat_fs,
-};
-
-LOG_MODULE_REGISTER(main);
 #define MAX_PATH 128
 
-int makeDirectory(const char *pathToDirectory) {
-	// assume relative to DISK_MOUNT_PT
-	// e.g. /SD:/somedirname1/somedirname2 -> /somedirname1/somedirname2
-
-	char path[MAX_PATH];
-	int base = strlen(DISK_MOUNT_PT);
-	strncpy(path, DISK_MOUNT_PT, sizeof(path));
-
-	path[base] = 0;
-	strcat(&path[base], pathToDirectory);
-	
-	int mkdirResult = fs_mkdir(path);
-	if (mkdirResult) {
-		printk("Failed to create directory: ");
-		switch (mkdirResult) {
-			case -17:
-				printk("directory already exists");
-				break;
-		}
-		printk("\n");
-	}
-
-
-	return mkdirResult;
-}
-
-int createFile(const char *pathToFile, struct fs_file_system_t *file) {
-	// assume relative to DISK_MOUNT_PT
-	// e.g. /SD:/somedirname1/somedirname2/a.txt -> /somedirname1/somedirname2/a.txt
-
-	char path[MAX_PATH];
-	int base = strlen(DISK_MOUNT_PT);
-	strncpy(path, DISK_MOUNT_PT, sizeof(path));
-
-	path[base] = 0;
-	strcat(&path[base], pathToFile);
-
-	int res = fs_open(file, path, FS_O_CREATE);
-	fs_close(file);
-
-	return res;
-}
-
-int openFile(const char *pathToFile, struct fs_file_system_t *file) {
-	// assume relative to DISK_MOUNT_PT
-	// e.g. /SD:/somedirname1/somedirname2/a.txt -> /somedirname1/somedirname2/a.txt
-
-	char path[MAX_PATH];
-	int base = strlen(DISK_MOUNT_PT);
-	strncpy(path, DISK_MOUNT_PT, sizeof(path));
-
-	path[base] = 0;
-	strcat(&path[base], pathToFile);
-
-	int res = fs_open(file, path, FS_O_RDWR);
-
-	return res;
-}
-
+static FATFS fat_fs;
 
 
 static const char *disk_mount_pt = DISK_MOUNT_PT;
 
-int main(void) {
-	// initalize so that mount works
+int mountDisk(struct fs_mount_t *mp) {
+	// note: make sure mp is static
+
+	printk("Accessing disk...\n");
 	if (disk_access_init(DISK_DRIVE_NAME) != 0) {
 		printk("Failed to initalize disk access");
 		return 1;
 	}
 
-	mp.mnt_point = disk_mount_pt;
+	mp->mnt_point = disk_mount_pt;
+	mp->type = FS_FATFS;
+	mp->fs_data = &fat_fs;
 
-	int res = fs_mount(&mp);
+	printk("Attempting to mount disk\n");
+	int res = fs_mount(mp);
 
-
-	if (res == FR_OK) {
-		printk("Disk mounted.\n");
-		printk("Trying to make a directory\n");
-
-
-		int mkdirRes = makeDirectory("/testing");
-		// printk("Trying to write a file to that directory");
-		int mkdirRes2 = makeDirectory("/againthing");
-
-		struct fs_file_system_t file;
-		int mkFileRes = createFile("/testing/a.txt", &file);
-
-		printk("trying to write to that file");
-
-		openFile("/testing/a.txt", &file);
-
-		char* buffer = "testing things";
-		int size = strlen(buffer) * sizeof(char);
-
-		int res = fs_write(&file, buffer, size);
-		printk("We successfully wrote? %d bytes: %d\n", size, res);
-		fs_close(&file);
-
-		printk("Let's check what we wrote");
-		struct fs_file_system_t readingFile;
-		openFile("/testing/a.txt", &readingFile);
-
-		char *readingBuffer = malloc(sizeof(char) * 13);
-		fs_read(&readingFile, readingBuffer, 13);
-		readingBuffer[12] = 0;
-		printk("Tesitng: %s\n", buffer);
-
-
-
-		// res = makeDirectory("/somethingnew");
-		// printk("res %d\n", res);
-		// res = createFile("/somethingnew/somefile.txt", &file);
-		// printk("res %d\n", res);
-		// res = openFile("/somethingnew/somefile.txt", &file);
-		// printk("res %d\n", res);
-		// char* newbuffer = "something else this is a file testing I dunno even man this is weird";
-		// size = strlen(newbuffer) * sizeof(char);
-		// fs_write(&file, newbuffer, size);
-		// fs_close(&file);
-
-
-		// char path[MAX_PATH];
-		// strncpy(path, disk_mount_pt, sizeof(path));
-		// int base = strlen(disk_mount_pt);
-		// path[base++] = '/';
-
-		// path[base] = 0;
-		// strcat(&path[base], "what");
-
-		// int mkDirRes = fs_mkdir(path);
-
-
-		// // trying to read root directory. Unable to read until we get print statements working
-		// int mkDirRes = makeDirectory("/testing");
-		// if (mkDirRes == -17 || mkDirRes == 0) {
-		// 	struct fs_dir_t directoryObj;
-		// 	fs_dir_t_init(&directoryObj);
-
-		// 	// make path to directory`
-		// 	char path[MAX_PATH];
-		// 	int base = strlen(DISK_MOUNT_PT);
-		// 	strncpy(path, DISK_MOUNT_PT, sizeof(path));
-
-		// 	path[base] = 0;
-		// 	strcat(&path[base], "");
-
-		// 	// open the directory
-		// 	int opendirRes = fs_opendir(&directoryObj, path);
-
-		// 	if (opendirRes) {
-		// 		printk("Failed to open the directory\n");
-		// 		return opendirRes;
-		// 	}
-
-		// 	struct fs_dirent entry;
-		// 	for (;;) {
-		// 		/* Verify fs_readdir() */
-		// 		res = fs_readdir(&directoryObj, &entry);
-
-		// 		/* entry.name[0] == 0 means end-of-dir */
-		// 		if (res || entry.name[0] == 0) {
-		// 			break;
-		// 		}
-
-		// 		if (entry.type == FS_DIR_ENTRY_DIR) {
-		// 			printk("[DIR ] %s\n", entry.name);
-		// 		} else {
-		// 			printk("[FILE] %s (size = %zu)\n",
-		// 				entry.name, entry.size);
-		// 		}
-		// 	}
-
-		// }
-
-	} else {
-		printk("Put the disk in dumbass.\n");
+	switch (res) {
+		case -16: 
+			printk("Busy. Make sure `mp` is static\n");
+			break;
 	}
 
+	return res;
+}
+
+int testReadDir(const char *path) {
+	printk("Testing Read Dir\n");
+
+	struct fs_dir_t dirp;
+	fs_dir_t_init(&dirp);
+
+	printk("Opening directory\n");
+	int res = fs_opendir(&dirp, path);
+	if (res) {
+		printk("Error opening dir %s\n [%d]\n", path, res);
+		return res;
+	}
+	printk("Dir opened successfully\n");
+
+	printk("Listing Dir %s ...\n", path);
+	int directoryCount = 0;
+	for (;; ++directoryCount) {
+		struct fs_dirent entry;
+		res = fs_readdir(&dirp, &entry);
+
+		if (res || entry.name[0] == 0) {
+			break;
+		}
+
+		if (entry.type == FS_DIR_ENTRY_DIR) {
+			printk("[DIR] %s\n", entry.name);
+		} else {
+			printk("[FILE] %s (size = %zu)\n", entry.name, entry.size);
+		}
+	}
+
+	printk("Closing dir\n");
+
+	fs_closedir(&dirp);
+
+	if (res == 0) {
+		res = directoryCount;
+	}
+
+	printk("Close responded with: %d\n", res);
+
+	return res;
+}
+
+int testReadFile(const char *path) {
+
+	struct fs_dirent entry;
+	printk("stating file at %s\n", path);
+	int res = fs_stat(path, &entry);
+
+	if (res) {
+		printk("Failed to stat file\n");
+		return res;
+	}
+
+	printk("File name: %s | File size: %d\n", entry.name, entry.size);
+
+	printk("Initing file obj\n");
+	struct fs_file_t file;
+	fs_file_t_init(&file);
+
+	printk("Opening file with read permissions\n");
+	res = fs_open(&file, path, FS_O_READ);
+
+	if (res) {
+		printk("Open failed\n");
+		return res;
+	}
+
+	printk("Reading the file with buffer of size %d\n", entry.size + 1);
+	char *buffer = (char*) calloc(entry.size + 1, sizeof(char));
+	printk("Reading\n");
+	res = fs_read(&file, buffer, entry.size);
+	if (res < 0) {
+		printk("Failed to read file %d\n", res);
+		free(buffer);
+		return res;
+	}
+
+	printk("Result:\n");
+	printk("'%s'\n", buffer);
+
+	printk("Freeing buffer\n");
+	free(buffer);
+
+	return 0;
+}
+
+int testCreateDirectory(const char *path) {
+	printk("Making Directory %s\n", path);
+	int res = fs_mkdir(path);
+	if (res) {
+		printk("mkdir failed %d\n", res);
+
+		if (res == -17) {
+			printk("The directory already exists\n");
+		} else if (res == -2) {
+			printk("This seems to mean that the directory name was too long\n");
+		}
+		return res;
+	}
+
+	printk("Directory made successfully\n");
+	return 0;
+
+}
+
+int testCreateFile(const char *path) {
+	printk("Making a file %s\n", path);
+
+	struct fs_file_t file;
+	fs_file_t_init(&file);
+
+	printk("Creating file\n");
+	int res = fs_open(&file, path, FS_O_CREATE);
+	if (res) {
+		printk("Failed to create file %d\n", res);
+		return res;
+	}
+
+	printk("File created successfully\n");
+
+	printk("closing file\n");
+	fs_close(&file);
+
+	return 0;
+}
+
+int testWriteFile(const char* path, const char* buffer, const int size) {
+	printk("Writing to file %s\n", path);
+
+	struct fs_file_t file;
+	fs_file_t_init(&file);
+
+	printk("Opening the file with write permission\n");
+	int res = fs_open(&file, path, FS_O_WRITE);
+	
+	if (res) {
+		printk("Failed to open file %d\n", res);
+		return res;
+	}
+
+	printk("Opened file, writing to it\n");
+	res = fs_write(&file, buffer, size);
+
+	if (res < 0) {
+		printk("Failed to write to file %d\n", res);
+		return res;
+	}
+
+	printk("Print succeeded\n");
+	printk("Closing file\n");
+	fs_close(&file);
+
+	return 0;
+
+	
+}
+
+
+
+int main(void) {
+	printk("---------------Running test suite---------------\n");
+
+	static struct fs_mount_t mp;
+	int res = mountDisk(&mp);
+
+	printk("Mount Responded with: %d\n", res);
+
+	// test
+	char *path = (char*) calloc(MAX_PATH, sizeof(char));
+
+	strcat(path, disk_mount_pt);
+	strcat(path, "/TOLNG");
+	printk("Dir path '%s'\n", path);
+
+	testCreateDirectory(path);
+
+	strcat(path, "/a.txt");
+	printk("file path '%s'\n", path);
+	testCreateFile(path);
+
+	char *content = "This is some stuff that should go into the file";
+	int size = strlen(content);
+	printk("trying to write %d bytes '%s' to '%s'\n", size, content, path);
+	testWriteFile(path, content, size);
+
+	path[0] = '\0';
+
+	printk("Reading dirs\n");
+	strcat(path, disk_mount_pt);
+	testReadDir(path);
+
+	strcat(path, "/TOLNG");
+	testReadDir(path);
+
+	printk("Reading file\n");
+	strcat(path, "/a.txt");
+	testReadFile(path);
+
+	path[0] = '\0';
+	
+	
+
+
+	
+
+	printk("Unmounting disk\n");
 	fs_unmount(&mp);
+
+	free(path);
+
+	
+
 
 	while (1) {
 		k_sleep(K_MSEC(1000));

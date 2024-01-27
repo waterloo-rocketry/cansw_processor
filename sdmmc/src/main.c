@@ -212,8 +212,6 @@ int testWriteFile(const char* path, const char* buffer, const int size) {
 	fs_close(&file);
 
 	return 0;
-
-	
 }
 
 
@@ -259,9 +257,6 @@ int main(void) {
 
 	path[0] = '\0';
 	
-	
-
-
 	
 
 	printk("Unmounting disk\n");

@@ -19,7 +19,7 @@
  * See the sample documentation for information on how to fix this.
  */
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
-static const struct i2c_dt_spec i2c_bus = I2C_DT_SPEC_GET(&i2c4);
+static const struct i2c_dt_spec i2c_bus = I2C_DT_SPEC_GET(i2c4);
 
 int main(void)
 {

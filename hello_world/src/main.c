@@ -12,6 +12,7 @@ LOG_MODULE_REGISTER(a, LOG_LEVEL_DBG);
 
 static const struct adc_channel_cfg ch0_cfg_dt =
     ADC_CHANNEL_CFG_DT(DT_CHILD(DT_NODELABEL(adc1), channel_0));
+static const struct adc_dt_spec adc = ADC_DT_SPEC_GET(adc1);
 
 int main(void)
 {

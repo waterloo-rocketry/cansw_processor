@@ -89,6 +89,11 @@
 	#address-cells = <1>;
 	#size-cells = <0>;
 
+	pinctrl-0 = <&gpio_a10_analog>;
+    pinctrl-names = "default";
+	st,adc-prescaler = <4>;
+    st,adc-clock-source = <SYNC>;
+
 	channel@0 {
 		reg = <0>;
 		zephyr,gain = "ADC_GAIN_1";
@@ -96,6 +101,15 @@
 		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
 		zephyr,resolution = <16>;
 	};
+	status = "ok";
+};
+
+//copied from https://github.com/zephyrproject-rtos/zephyr/issues/65387
+&pinctrl {
+    gpio_a10_analog: gpio_a10_analog {
+        pinmux = <STM32_PINMUX('A',10,ANALOG)>;
+    };
+    status = "okay";
 };
 
 

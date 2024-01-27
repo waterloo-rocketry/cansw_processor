@@ -54,7 +54,7 @@
 	div-m = <4>;
 	mul-n = <125>;
 	div-p = <1>;
-	div-q = <1>;
+	div-q = <20>; // 500 / 20 = 25MHz for SDMMC
 	div-r = <1>;
 	clocks = <&clk_hsi>;
 	status = "okay";
@@ -71,6 +71,17 @@
 	d3ppre = <2>;
 };
 
+&sdmmc1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&sdmmc1_d0_pc8
+		     &sdmmc1_d1_pc9
+		     &sdmmc1_d2_pc10
+		     &sdmmc1_d3_pc11
+		     &sdmmc1_ck_pc12
+		     &sdmmc1_cmd_pd2>;
+	bus-width = <4>;
+    	status = "okay";
+};
 
 
 &uart4 {

@@ -85,11 +85,11 @@
 	status = "okay";
 	//clock-frequency = <I2C_SPEED_STANDARD>; //bad paramater
 
-	icm: icm@69 {
+	/* icm: icm@69 {
         compatible = "i2c-device";
         reg = <0x69>;
         label = "ICM-20948";
-    };
+    }; */
 };
 
 

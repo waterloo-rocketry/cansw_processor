@@ -39,6 +39,7 @@ bool ICM_20948_init(uint8_t ICM_20948_addr_in, uint8_t AK09916_mag_addr_in) {
     MY2C_write1ByteRegister(AK09916_mag_addr, CNTL3, 0x01);
     // Set to continuous measurement mode 3 (50 Hz measurement frequency)
     MY2C_write1ByteRegister(AK09916_mag_addr, CNTL2, 0x06);
+    //MY2C_write1ByteRegister(AK09916_mag_addr, CNTL2, 0x06);
     
     return true;
 }
@@ -51,7 +52,8 @@ bool ICM_20948_check_sanity(void) {
     uint8_t mag_addr_sanity = MY2C_read1ByteRegister(AK09916_mag_addr, WIA2);
     
     // Sanity fails if the "who am i" registers doesn't match
-    if (addr_sanity != 0xEA || mag_addr_sanity != 0x09) {
+    //if (addr_sanity != 0xEA || mag_addr_sanity != 0x09) {
+    if (addr_sanity != 0xEA) {
         return false;
     }
 
@@ -96,7 +98,7 @@ bool ICM_20948_get_gyro_raw(int16_t *x, int16_t *y, int16_t *z) {
     return true;
 }
 
-bool ICM_20948_get_mag_raw(int16_t *x, int16_t *y, int16_t *z) {
+/* bool ICM_20948_get_mag_raw(int16_t *x, int16_t *y, int16_t *z) {
     if (!x || !y || !z) { return false; }
     
      // Check if magnetometer data is ready, fail if it is not
@@ -122,7 +124,7 @@ bool ICM_20948_get_mag_raw(int16_t *x, int16_t *y, int16_t *z) {
     MY2C_read1ByteRegister(AK09916_mag_addr, ST2);
     
     return true;
-}
+} */
 
 //IMU has a temperature sensor, it is not being used
 

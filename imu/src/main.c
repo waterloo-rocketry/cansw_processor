@@ -22,9 +22,6 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 const struct device *const i2c_dev = DEVICE_DT_GET(I2C4);
 uint32_t i2c_cfg = I2C_SPEED_SET(I2C_SPEED_STANDARD) | I2C_MODE_CONTROLLER;
 
-
-
-
 LOG_MODULE_REGISTER(a, LOG_LEVEL_DBG);
 
 
@@ -73,6 +70,11 @@ int main(void)
 	}
 
 	while (1) {
+		int16_t data[3];
+		ICM_20948_get_accel_raw(data, data+1, data+2);
+		//ICM_20948_get_gyro_raw(data, data+1, data+2);
+		printk("x: %d, y: %d, z: %d\n", data[0], data[1], data[2]);
+
 		ret = gpio_pin_toggle_dt(&led);
 		if (ret < 0) {
 			return 0;

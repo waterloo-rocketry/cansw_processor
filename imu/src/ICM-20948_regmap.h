@@ -149,6 +149,7 @@
 #define I2C_SLV4_DI 0x17
 
 // Magnetometer register map
+#define WIA1 0x00
 #define WIA2 0x01
 #define ST1 0x10
 #define HXL 0x11

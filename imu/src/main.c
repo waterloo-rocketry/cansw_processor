@@ -52,8 +52,8 @@ int main(void)
 
 
 	//init IMU
-	while(ICM_20948_init(ICM_20948_ADDR, AK09916_MAG_ADDR)){}
-    while(ICM_20948_check_sanity()){}
+	ICM_20948_init(ICM_20948_ADDR, AK09916_MAG_ADDR);
+	ICM_20948_check_sanity();
 
 	//blinky init stuff
 	int ret;

@@ -81,15 +81,7 @@
 &i2c4 {
 	pinctrl-0 = <&i2c4_scl_pb6 &i2c4_sda_pb7>;
 	pinctrl-names = "default";
-	//may need clock config?
 	status = "okay";
-	//clock-frequency = <I2C_SPEED_STANDARD>; //bad paramater
-
-	/* icm: icm@69 {
-        compatible = "i2c-device";
-        reg = <0x69>;
-        label = "ICM-20948";
-    }; */
 };
 
 

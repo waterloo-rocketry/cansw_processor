@@ -12,7 +12,7 @@
 #include <zephyr/logging/log.h>
 
 /* 1000 msec = 1 sec */
-#define SLEEP_TIME_MS 1000
+#define SLEEP_TIME_MS 100
 
 #define LED0_NODE DT_ALIAS(led0)
 #define I2C4 DT_NODELABEL(i2c4)
@@ -71,8 +71,8 @@ int main(void)
 
 	while (1) {
 		int16_t data[3];
-		ICM_20948_get_accel_raw(data, data+1, data+2);
-		//ICM_20948_get_gyro_raw(data, data+1, data+2);
+		//ICM_20948_get_accel_raw(data, data+1, data+2);
+		ICM_20948_get_gyro_raw(data, data+1, data+2);
 		printk("x: %d, y: %d, z: %d\n", data[0], data[1], data[2]);
 
 		ret = gpio_pin_toggle_dt(&led);

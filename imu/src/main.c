@@ -9,7 +9,7 @@
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/device.h>
 #include "ICM-20948.h"
-
+#include <zephyr/logging/log.h>
 
 /* 1000 msec = 1 sec */
 #define SLEEP_TIME_MS 1000
@@ -21,6 +21,11 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 
 const struct device *const i2c_dev = DEVICE_DT_GET(I2C4);
 uint32_t i2c_cfg = I2C_SPEED_SET(I2C_SPEED_STANDARD) | I2C_MODE_CONTROLLER;
+
+
+
+
+LOG_MODULE_REGISTER(a, LOG_LEVEL_DBG);
 
 
 int main(void)
@@ -52,8 +57,8 @@ int main(void)
 
 
 	//init IMU
-	ICM_20948_init(ICM_20948_ADDR, AK09916_MAG_ADDR);
-	ICM_20948_check_sanity();
+	while(!ICM_20948_init(ICM_20948_ADDR, AK09916_MAG_ADDR));
+	while(!ICM_20948_check_sanity());
 
 	//blinky init stuff
 	int ret;

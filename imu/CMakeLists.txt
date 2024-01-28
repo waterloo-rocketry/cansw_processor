@@ -5,3 +5,5 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(blinky)
 
 target_sources(app PRIVATE src/main.c)
+target_sources(app PRIVATE src/ICM-20948.c)
+target_sources(app PRIVATE src/my2c.c)

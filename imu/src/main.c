@@ -8,23 +8,54 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/device.h>
+#include "ICM-20948.h"
+
 
 /* 1000 msec = 1 sec */
-#define SLEEP_TIME_MS   5000
+#define SLEEP_TIME_MS 1000
 
-/* The devicetree node identifier for the "led0" alias. */
 #define LED0_NODE DT_ALIAS(led0)
 #define I2C4 DT_NODELABEL(i2c4)
 
-/*
- * A build error on this line means your board is unsupported.
- * See the sample documentation for information on how to fix this.
- */
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
-//static const struct i2c_dt_spec i2c_bus = I2C_DT_SPEC_GET(I2C4);
+
+const struct device *const i2c_dev = DEVICE_DT_GET(I2C4);
+uint32_t i2c_cfg = I2C_SPEED_SET(I2C_SPEED_STANDARD) | I2C_MODE_CONTROLLER;
+
 
 int main(void)
 {
+	//configure I2C
+
+	uint32_t i2c_cfg_tmp;
+
+	if (!device_is_ready(i2c_dev)) {
+		
+		return 0;
+	}
+
+	/* 1. Verify i2c_configure() */
+	if (i2c_configure(i2c_dev, i2c_cfg)) {
+		
+		return 0;
+	}
+
+	/* 2. Verify i2c_get_config() */
+	if (i2c_get_config(i2c_dev, &i2c_cfg_tmp)) {
+		
+		return 0;
+	}
+	if (i2c_cfg != i2c_cfg_tmp) {
+		
+		return 0;
+	}
+
+
+	//init IMU
+	while(ICM_20948_init(ICM_20948_ADDR, AK09916_MAG_ADDR)){}
+    while(ICM_20948_check_sanity()){}
+
+	//blinky init stuff
 	int ret;
 
 	if (!gpio_is_ready_dt(&led)) {
@@ -36,8 +67,6 @@ int main(void)
 		return 0;
 	}
 
-
-
 	while (1) {
 		ret = gpio_pin_toggle_dt(&led);
 		if (ret < 0) {
@@ -45,5 +74,6 @@ int main(void)
 		}
 		k_msleep(SLEEP_TIME_MS);
 	}
+
 	return 0;
 }

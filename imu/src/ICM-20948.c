@@ -1,11 +1,8 @@
-#include "mcc_generated_files/device_config.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include <xc.h>
 #include "my2c.h"
-#include "ICM-20948.h"   
+#include "ICM-20948.h"  
 #include "ICM-20948_regmap.h"
-#include "sensor_general.h"
 
 //I2C addresses
 static uint8_t ICM_20948_addr;

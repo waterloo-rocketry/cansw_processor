@@ -21,7 +21,6 @@ static bool our_channel_validator(const void *message, size_t message_size) {
 
 	const struct out_zbus_message *recieved_message = message;
 
-	// check that the content size value is correct
 	bool validType = (type >= 0 && type <= 5);
 	bool contentSizeCorrect = (recieved_message->contentSize == strlen(recieved_message->content);
 
@@ -80,7 +79,7 @@ K_THREAD_DEFINE(
 	3, // thread priority
 	0, // options
 	0 // delay
-)
+);
 
 
 int main() {
@@ -91,7 +90,7 @@ int main() {
 		.type = 0,
 		.content = "testing",
 		.contentSize = strlen("testing")
-	}
+	};
 	int error = zbus_chan_pub(&our_channel, &message, K_SECONDS(1));
 
 	if (error == 0) {
@@ -101,7 +100,6 @@ int main() {
 	k_msleep(1000);
 
 	LOG_INF("Publishing a new message to our channel...");
-	struct our_zbus_message message = {
 	our_zbus_message.content = "This is a new message";
 	int error2 = zbus_chan_pub(&our_channel, &message, K_SECONDS(1));
 
@@ -110,7 +108,6 @@ int main() {
 	} else if (error2 == 0) {
 		LOG_INF("Something other than the validator went wrong here!");
 	}
-
 
 	LOG_INF("Exiting");
 	return 0;

@@ -80,6 +80,20 @@
 	status = "okay";
 };
 
+&fdcan1 {
+	pinctrl-0 = <&fdcan1_rx_pa11 &fdcan1_tx_pa12>;
+	pinctrl-names = "default";
 
+	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
+		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>;
+	status = "okay";
+	bus-speed = <42000>; //current bus speed is 42 kbps, eventually boosted to 250 kbps for 2024
+	bus-speed-data = <42000>; //This is a CAN-FD thing. For CAN 2.0B rates should be identical
+	//bosch,mram-cfg is marked required in the docs, sample code doesn't include it 
+
+	can-transceiver {
+		max-bitrate = <1000000>; //Dunno what MCP2565 supports but must be at least 1 MHz
+	};
+};
 
 

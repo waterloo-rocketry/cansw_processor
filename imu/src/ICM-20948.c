@@ -98,7 +98,7 @@ bool ICM_20948_get_gyro_raw(int16_t *x, int16_t *y, int16_t *z) {
     return true;
 }
 
-/* bool ICM_20948_get_mag_raw(int16_t *x, int16_t *y, int16_t *z) {
+bool ICM_20948_get_mag_raw(int16_t *x, int16_t *y, int16_t *z) {
     if (!x || !y || !z) { return false; }
     
      // Check if magnetometer data is ready, fail if it is not
@@ -124,7 +124,7 @@ bool ICM_20948_get_gyro_raw(int16_t *x, int16_t *y, int16_t *z) {
     MY2C_read1ByteRegister(AK09916_mag_addr, ST2);
     
     return true;
-} */
+}
 
 //IMU has a temperature sensor, it is not being used
 

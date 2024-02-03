@@ -72,7 +72,8 @@ int main(void)
 	while (1) {
 		int16_t data[3];
 		//ICM_20948_get_accel_raw(data, data+1, data+2);
-		ICM_20948_get_gyro_raw(data, data+1, data+2);
+		//ICM_20948_get_gyro_raw(data, data+1, data+2);
+		ICM_20948_get_mag_raw(data, data+1, data+2);
 		printk("x: %d, y: %d, z: %d\n", data[0], data[1], data[2]);
 
 		ret = gpio_pin_toggle_dt(&led);

@@ -46,17 +46,27 @@
  &clk_hsi {
 	//clock-frequency = <DT_FREQ_M(64)>;
 	status = "okay";
-	hsi-div = <4>;
+	hsi-div = <4>; //Output 16 MHz
 };
 
 
 &pll {
 	div-m = <4>;
-	mul-n = <125>;
+	mul-n = <125>; //Divide 16 down to 4, mul by 125 to get 500Mhz output from PLL
 	div-p = <1>;
 	div-q = <1>;
 	div-r = <1>;
 	clocks = <&clk_hsi>;
+	status = "okay";
+};
+
+&pll2 {
+	div-m = <1>; 
+	mul-n = <21>;
+	div-p = <1>;
+	div-q = <8>; //set PLL2_Q output to 16*21/8 = 42 Mhz
+	div-r = <1>;
+	clocks = <&clk_hse>; //16 Mhz in
 	status = "okay";
 };
 
@@ -71,8 +81,6 @@
 	d3ppre = <2>;
 };
 
-
-
 &uart4 {
     pinctrl-0 = <&uart4_tx_pb9 &uart4_rx_pb8>;
 	pinctrl-names = "default";
@@ -85,10 +93,10 @@
 	pinctrl-names = "default";
 
 	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
-		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>;
+		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(1)>; //FDCAN_SEL points to RCC_D2CCIP1R bits 29:28
 	status = "okay";
-	bus-speed = <42000>; //current bus speed is 42 kbps, eventually boosted to 250 kbps for 2024
-	bus-speed-data = <42000>; //This is a CAN-FD thing. For CAN 2.0B rates should be identical
+	bus-speed = <10000>; //current bus speed is 42 kbps, eventually boosted to 250 kbps for 2024
+	bus-speed-data = <10000>; //This is a CAN-FD thing. For CAN 2.0B rates should be identical
 	//bosch,mram-cfg is marked required in the docs, sample code doesn't include it 
 
 	can-transceiver {

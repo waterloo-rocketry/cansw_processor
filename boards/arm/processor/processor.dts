@@ -62,9 +62,9 @@
 
 &pll2 {
 	div-m = <1>; 
-	mul-n = <21>;
+	mul-n = <4>;
 	div-p = <1>;
-	div-q = <8>; //set PLL2_Q output to 16*21/8 = 42 Mhz
+	div-q = <1>; //set PLL2_Q output to 64 Mhz
 	div-r = <1>;
 	clocks = <&clk_hse>; //16 Mhz in
 	status = "okay";
@@ -93,10 +93,10 @@
 	pinctrl-names = "default";
 
 	clocks = <&rcc STM32_CLOCK_BUS_APB1_2 0x00000100>,
-		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(1)>; //FDCAN_SEL points to RCC_D2CCIP1R bits 29:28
+		 <&rcc STM32_SRC_PLL2_Q FDCAN_SEL(2)>; //FDCAN_SEL points to RCC_D2CCIP1R bits 29:28
 	status = "okay";
-	bus-speed = <10000>; //current bus speed is 42 kbps, eventually boosted to 250 kbps for 2024
-	bus-speed-data = <10000>; //This is a CAN-FD thing. For CAN 2.0B rates should be identical
+	bus-speed = <250000>; //current bus speed is 42 kbps, eventually boosted to 250 kbps for 2024
+	bus-speed-data = <250000>; //This is a CAN-FD thing. For CAN 2.0B rates should be identical
 	//bosch,mram-cfg is marked required in the docs, sample code doesn't include it 
 
 	can-transceiver {

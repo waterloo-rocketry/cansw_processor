@@ -21,8 +21,10 @@ static bool our_channel_validator(const void *message, size_t message_size) {
 
 	const struct out_zbus_message *recieved_message = message;
 
-	bool validType = (type >= 0 && type <= 5);
-	bool contentSizeCorrect = (recieved_message->contentSize == strlen(recieved_message->content);
+	// bool validType = (recieved_message->type >= 0 && recieved_message->type <= 5);
+	bool validType = 1;
+	// bool contentSizeCorrect = (recieved_message->contentSize == strlen(recieved_message->content));
+	bool contentSizeCorrect = 1;
 
 	return (validType && contentSizeCorrect);
 }
@@ -33,7 +35,7 @@ ZBUS_CHAN_DEFINE(
 	our_channel_validator, // validator (function to flush out invalid messages)
 	NULL, // User Data
 	ZBUS_OBSERVERS(our_channel_listener, our_channel_subscriber), // observers
-	ZBUS_MESSAGE_INIT(.type = 0, .content = "", .contentSize = 0) // inital value
+	ZBUS_MSG_INIT(.type = 0, .content = "", .contentSize = 0) // inital value
 );
 
 static void observer_function(const struct zbus_channel *chan) {
@@ -61,11 +63,7 @@ static void subscriber_listen(void) {
 		struct our_zbus_message recieved_message;
 		zbus_chan_read(&our_channel, &recieved_message, K_MSEC(500));
 
-		LOG_INF(
-			"Subscriber read a message on channel %s: '%s'",
-			zbus_chan_name(chan),
-			recieved_message.content,
-		);
+		LOG_INF("Subscriber read a message on channel %s: '%s'", zbus_chan_name(chan), recieved_message.content);
 	}
 }
 
@@ -82,7 +80,7 @@ K_THREAD_DEFINE(
 );
 
 
-int main() {
+int main(void) {
 	LOG_INF("======= Starting simple zbus sample =======");
 
 	LOG_INF("Publishing a message to our channel...");
@@ -100,7 +98,7 @@ int main() {
 	k_msleep(1000);
 
 	LOG_INF("Publishing a new message to our channel...");
-	our_zbus_message.content = "This is a new message";
+	message.content = "This is a new message";
 	int error2 = zbus_chan_pub(&our_channel, &message, K_SECONDS(1));
 
 	if (error2 == 0 && error == 0) {

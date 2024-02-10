@@ -76,14 +76,12 @@ void second(void) {
         return;
     }
 
-    //uart_device = device_get_binding(UART_NODE);
-
     if (!uart_device) {
         return;
     }
 
     uart_irq_callback_set(uart_device, uart_callback);
-    //uart_irq_rx_enable(uart_device);
+    uart_irq_rx_enable(uart_device);
 
     // Main loop
     while (1) {

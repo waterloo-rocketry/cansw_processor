@@ -29,7 +29,7 @@ int main(void)
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 
 #define UART_NODE DT_NODELABEL(uart4)
-const struct device *uart_device;
+const struct device *uart_device = DEVICE_DT_GET(UART_NODE);
 
 // UART receive buffer
 #define UART_BUFF_SIZE 4
@@ -61,7 +61,7 @@ void uart_callback(const struct device *dev, void *user_data) {
         }
     }
 }
-
+ 
 void second(void) {
 
     int ret;
@@ -76,14 +76,14 @@ void second(void) {
         return;
     }
 
-    uart_device = device_get_binding(UART_NODE);
+    //uart_device = device_get_binding(UART_NODE);
 
     if (!uart_device) {
         return;
     }
 
     uart_irq_callback_set(uart_device, uart_callback);
-    uart_irq_rx_enable(uart_device);
+    //uart_irq_rx_enable(uart_device);
 
     // Main loop
     while (1) {

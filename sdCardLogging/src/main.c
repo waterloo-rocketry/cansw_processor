@@ -80,8 +80,8 @@ static void loggingListenerFunction(const struct zbus_channel *chan) {
 
 	const LoggingMessage *message = zbus_chan_const_msg(chan);
 
-	LOG_INF(
-		"Listener got a message with path '%s', and content '%s'",
+	printk(
+		"Listener got a message with path '%s', and content '%s'\n",
 		message->path,
 		message->content
 	);
@@ -90,52 +90,47 @@ static void loggingListenerFunction(const struct zbus_channel *chan) {
 	int res = mountDisk(&mp);
 
 	if (res) {
-		LOG_INF("Failed to mount disk (%d)", res);
+		printk("Failed to mount disk (%d)\n", res);
 		return;
 	}
 
-	LOG_INF("Opening file");
+	printk("Opening file\n");
 	struct fs_file_t file;
 	fs_file_t_init(&file);
 
 	res = fs_open(&file, message->path, FS_O_APPEND | FS_O_CREATE);
 
-	LOG_INF("OPen res: %d", res);
+	printk("OPen res: %d\n", res);
 
-	LOG_INF("Writing to file");
+	printk("Writing to file\n");
 
 	res = fs_write(&file, message->content, strlen(message->content));
 
-	LOG_INF("write response %d", res);
+	printk("write response %d\n", res);
 
-	LOG_INF("closing file");
+	printk("closing file\n");
 	fs_close(&file);
 
-
-
 	fs_unmount(&mp);
-
-
-
 }
 
 ZBUS_LISTENER_DEFINE(loggingListener, loggingListenerFunction);
 
 int main(void) {
-	LOG_INF("======= Starting sd card logging sample =======");
+	printk("======= Starting sd card logging sample =======\n");
 
-	LOG_INF("Publishing a valid message to channel...");
+	printk("Publishing a valid message to channel...\n");
 	LoggingMessage message = {
 		.content = "testing",
-		.path = "/SD:Testing"
+		.path = "/Testing"
 	};
 	int error = zbus_chan_pub(&LoggingChannel, &message, K_SECONDS(1));
 
 	if (error) {
-		LOG_INF("We failed to send a valid message, this is bad!");
+		printk("We failed to send a valid message, this is bad!\n");
 	}
 
 
-	LOG_INF("Exiting");
+	printk("Exiting\n");
 	return 0;
 }
